@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "React social network",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
   "author": "Maxim Zviagintsev",
   "license": "MIT",
   "dependencies": {
