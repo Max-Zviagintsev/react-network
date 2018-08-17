@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Container} from 'semantic-ui-react';
 
 import NavBar from './components/layout/Navbar';
 import Footer from "./components/layout/Footer";
@@ -17,23 +16,13 @@ class App extends Component {
         const appStyle = {
             backgroundImage: `url(${background})`,
         };
-        const leftItems = [
-            {as: "a", content: "Users", key: "users"}
-        ];
-        const rightItems = [
-            {as: "a", content: "Login", key: "login"},
-            {as: "a", content: "Register", key: "register"}
-        ];
-
         return (
             <Router>
                 <div style={appStyle} className="main-wrapper">
-                    <NavBar leftItems={leftItems} rightItems={rightItems}/>
+                    <NavBar/>
                     <Route exact path="/" component={Home}/>
-                    <Container>
                         <Route exact path="/register" component={Register}/>
                         <Route exact path="/login" component={Login}/>
-                    </Container>
                     <Footer/>
                 </div>
             </Router>
