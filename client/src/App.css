@@ -16,6 +16,7 @@ html, body {
     flex: 1 0 auto;
     position: absolute !important;
 }
+
 .home-container {
     display: flex !important;
     justify-content: center;
@@ -23,24 +24,29 @@ html, body {
     top: 30%;
     padding: 0 20px 200px 20px;
 }
+
 .register-container {
-      top: 20%;
-      display: flex !important;
-      flex-direction: column;
-      align-self: center;
-      padding: 0 20px 100px 20px;
-  }
-.register-container form{
+    top: 20%;
+    display: flex !important;
+    flex-direction: column;
+    align-self: center;
+    padding: 0 20px 100px 20px;
+}
+
+.register-container form {
     min-width: 300px;
     margin: auto !important;
 }
+
 @media screen and (min-width: 766px) {
     .main-wrapper {
         height: 100vh;
     }
+
     .main-container {
         position: static !important;
     }
+
     .register-container {
         margin-top: 100px;
     }

@@ -2,6 +2,9 @@ import React, {Component} from "react";
 import {Container, Icon, Image, Menu, Sidebar, Responsive} from "semantic-ui-react";
 import logo from "../../img/logo.png";
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {logoutUser} from "../../actions/authActions";
 
 const NavBarMobile = ({children, onPusherClick, onToggle, visible}) => (
     <Sidebar.Pushable>
@@ -85,6 +88,7 @@ class NavBar extends Component {
     render() {
         const {children} = this.props;
         const {visible} = this.state;
+        const { isAuthenticated, user } = this.props.auth;
 
         return (
             <React.Fragment>
@@ -106,4 +110,13 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+NavBar.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(mapStateToProps, {logoutUser})(NavBar);

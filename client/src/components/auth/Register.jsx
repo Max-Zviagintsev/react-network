@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 import {Button, Form, Container, Header, Segment, Message} from 'semantic-ui-react';
 import classnames from 'classnames';
+import {connect} from 'react-redux';
+import {registerUser} from '../../actions/authActions'
 
 class Register extends Component {
     constructor() {
@@ -11,6 +15,12 @@ class Register extends Component {
             password: '',
             password2: '',
             errors: {}
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+            this.setState({errors: nextProps.errors});
         }
     }
 
@@ -25,7 +35,7 @@ class Register extends Component {
             password: this.state.password,
             password2: this.state.password2
         };
-        console.log(newUser);
+        this.props.registerUser(newUser, this.props.history);
     };
 
     render() {
@@ -40,7 +50,8 @@ class Register extends Component {
                         account</Header>
                 </Segment>
 
-                <Form inverted onSubmit={this.onSubmit} className={classnames({'error': errors.name || errors.email || errors.password || errors.password2})}>
+                <Form inverted onSubmit={this.onSubmit}
+                      className={classnames({'error': errors.name || errors.email || errors.password || errors.password2})}>
 
                     <Form.Field className={classnames({'error': errors.name})}>
                         <label>Name</label>
@@ -48,8 +59,7 @@ class Register extends Component {
                                onChange={this.onChange}/>
                         <Message
                             error
-                            header='Hoops!'
-                            content={errors.name} />
+                            content={errors.name}/>
                     </Form.Field>
 
                     <Form.Field className={classnames({'error': errors.email})}>
@@ -58,8 +68,7 @@ class Register extends Component {
                                onChange={this.onChange}/>
                         <Message
                             error
-                            header='Hoops!'
-                            content={errors.email} />
+                            content={errors.email}/>
                     </Form.Field>
 
                     <Form.Field className={classnames({'error': errors.password})}>
@@ -68,8 +77,7 @@ class Register extends Component {
                                onChange={this.onChange}/>
                         <Message
                             error
-                            header='Hoops!'
-                            content={errors.password} />
+                            content={errors.password}/>
                     </Form.Field>
 
                     <Form.Field className={classnames({'error': errors.password2})}>
@@ -79,8 +87,7 @@ class Register extends Component {
 
                         <Message
                             error
-                            header='Hoops!'
-                            content={errors.password2} />
+                            content={errors.password2}/>
                     </Form.Field>
                     <Button type='submit' fluid size='large' color='orange'>Submit</Button>
                 </Form>
@@ -89,4 +96,15 @@ class Register extends Component {
     }
 }
 
-export default Register;
+Register.propTypes = {
+    registerUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+});
+
+export default connect(mapStateToProps, {registerUser})(withRouter(Register));
