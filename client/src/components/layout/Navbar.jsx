@@ -6,71 +6,6 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logoutUser} from "../../actions/authActions";
 
-const NavBarMobile = ({children, onPusherClick, onToggle, visible}) => (
-    <Sidebar.Pushable>
-        <Sidebar
-            as={Menu}
-            animation="overlay"
-            icon="labeled"
-            inverted
-            vertical
-            visible={visible}
-        >
-            <Menu.Item as={Link} name='user' to='user'>
-                User
-            </Menu.Item>
-
-            <Menu.Item as={Link} name='login' to='login'>
-                Login
-            </Menu.Item>
-
-            <Menu.Item as={Link} name='register' to='register'>
-                Register
-            </Menu.Item>
-            {children}
-        </Sidebar>
-        <Sidebar.Pusher
-
-            onClick={onPusherClick}
-            style={{minHeight: "100vh"}}
-        >
-            <Menu fixed="top" inverted>
-                <Menu.Item as={Link} name='home' to='/'>
-                    <Image size="mini" src={logo}/>
-                </Menu.Item>
-                <Menu.Item onClick={onToggle}>
-                    <Icon name="sidebar"/>
-                </Menu.Item>
-            </Menu>
-        </Sidebar.Pusher>
-    </Sidebar.Pushable>
-);
-
-const NavBarDesktop = () => (
-    <Menu fixed="top" className="custom-navbar">
-        <Menu.Item as={Link} name='home' to='/'>
-            <Image size="mini" src={logo}/>
-        </Menu.Item>
-
-        <Menu.Item as={Link} name='user' to='user'>
-            User
-        </Menu.Item>
-
-        <Menu.Menu position="right">
-            <Menu.Item as={Link} name='login' to='login'>
-                Login
-            </Menu.Item>
-
-            <Menu.Item as={Link} name='register' to='register'>
-                Register
-            </Menu.Item>
-        </Menu.Menu>
-    </Menu>
-);
-
-const NavBarChildren = ({children}) => (
-    <Container>{children}</Container>
-);
 
 class NavBar extends Component {
     state = {
@@ -85,10 +20,91 @@ class NavBar extends Component {
 
     handleToggle = () => this.setState({visible: !this.state.visible});
 
+    onLogoutClick = (e) => {
+        e.preventDefault();
+        this.props.logoutUser();
+    };
+
     render() {
         const {children} = this.props;
         const {visible} = this.state;
-        const { isAuthenticated, user } = this.props.auth;
+        const {isAuthenticated, user} = this.props.auth;
+
+        const authLinks = (
+            <Menu.Menu position="right">
+                <Menu.Item>
+                    <Image src={user.avatar} alt={user.name} title="You must have a Gravatar connected to your email to display an image" avatar/>
+                </Menu.Item>
+                <Menu.Item name='logout' onClick={this.onLogoutClick}>
+                    Logout
+                </Menu.Item>
+            </Menu.Menu>
+        );
+
+        const guestLinks = (
+            <Menu.Menu position="right">
+                <Menu.Item as={Link} name='login' to='login'>
+                    Login
+                </Menu.Item>
+
+                <Menu.Item as={Link} name='register' to='register'>
+                    Register
+                </Menu.Item>
+            </Menu.Menu>
+        );
+
+        const NavBarMobile = ({children, onPusherClick, onToggle, visible}) => (
+            <Sidebar.Pushable>
+                <Sidebar
+                    as={Menu}
+                    animation="overlay"
+                    icon="labeled"
+                    inverted
+                    vertical
+                    visible={visible}
+                >
+                    <Menu.Item as={Link} name='user' to='user'>
+                        User
+                    </Menu.Item>
+
+                    {isAuthenticated ? authLinks : guestLinks}
+
+                    {children}
+                </Sidebar>
+                <Sidebar.Pusher
+
+                    onClick={onPusherClick}
+                    style={{minHeight: "100vh"}}
+                >
+                    <Menu fixed="top" inverted>
+                        <Menu.Item as={Link} name='home' to='/'>
+                            <Image size="mini" src={logo}/>
+                        </Menu.Item>
+                        <Menu.Item onClick={onToggle}>
+                            <Icon name="sidebar"/>
+                        </Menu.Item>
+                    </Menu>
+                </Sidebar.Pusher>
+            </Sidebar.Pushable>
+        );
+
+        const NavBarDesktop = () => (
+                <Menu fixed="top" className="custom-navbar">
+                    <Menu.Item as={Link} name='home' to='/'>
+                        <Image size="mini" src={logo}/>
+                    </Menu.Item>
+
+                    <Menu.Item as={Link} name='user' to='user'>
+                        User
+                    </Menu.Item>
+                    {isAuthenticated ? authLinks : guestLinks}
+                </Menu>
+            )
+        ;
+
+        const NavBarChildren = ({children}) => (
+            <Container>{children}</Container>
+        );
 
         return (
             <React.Fragment>
