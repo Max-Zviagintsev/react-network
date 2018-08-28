@@ -25,6 +25,19 @@ html, body {
     padding: 0 20px 200px 20px;
 }
 
+.dashboard-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+
+}
+
+.dashboard-container div {
+    text-align: center;
+
+}
+
 .register-container {
     top: 20%;
     display: flex !important;
