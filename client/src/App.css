@@ -7,7 +7,6 @@ html, body {
     display: flex;
     flex-direction: column;
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
@@ -53,7 +52,7 @@ html, body {
 
 @media screen and (min-width: 766px) {
     .main-wrapper {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .main-container {
@@ -84,4 +83,15 @@ html, body {
 
 .home__button {
     min-width: 105px;
+}
+
+.form__description {
+    margin-top: 0 !important;
+    padding-top: 7px !important;
+    padding-left: 0 !important;
+}
+
+.social__wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
