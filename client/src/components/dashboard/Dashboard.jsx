@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {getCurrentProfile} from '../../actions/profileActions';
+import {getCurrentProfile, deleteAccount} from '../../actions/profileActions';
 import {Button, Container, Header, Loader, Segment} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
+import ProfileActions from './ProfileActions';
 
 class Dashboard extends Component {
 
     componentDidMount() {
         this.props.getCurrentProfile();
+    }
+
+    onDeleteClick(e) {
+        this.props.deleteAccount();
     }
 
     render() {
@@ -24,13 +29,23 @@ class Dashboard extends Component {
         } else {
             // Check if logged in user has profile data
             if (Object.keys(profile).length > 0) {
-                dashboardContent = <h4>TODO: DISPLAY PROFILE</h4>;
+                dashboardContent = <Container>
+                    <Segment basic>
+                    Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+                    </Segment>
+                    <ProfileActions/>
+                    <Button type='button' size='large' color='red'
+                            onClick={this.onDeleteClick} className="home__button">
+                        Delete Account
+                    </Button>
+                </Container>
             } else {
                 // User is logged in but has no profile
                 dashboardContent = (
                     <Segment basic>
                         <Header as='h1' textAlign='center' inverted>Welcome {user.name}</Header>
-                        <Header as='h3' textAlign='center' inverted>You have not yet setup a profile, please add some info</Header>
+                        <Header as='h3' textAlign='center' inverted>You have not yet setup a profile, please add some
+                            info</Header>
                         <Button as={Link} to='/create-profile' size='large' color='orange'
                                 className="home__button">
                             Create Profile
@@ -40,16 +55,17 @@ class Dashboard extends Component {
             }
         }
 
-            return (
-                <Container className={classes}>
-                    {dashboardContent}
-                </Container>
-            );
-        }
+        return (
+            <Container className={classes}>
+                {dashboardContent}
+            </Container>
+        );
     }
+}
 
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
+    deleteAccount: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired
 };
@@ -59,4 +75,4 @@ const mapStateToProps = state => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(mapStateToProps, {getCurrentProfile, deleteAccount})(Dashboard);

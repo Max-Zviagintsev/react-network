@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import connect from "react-redux/es/connect/connect";
 import {withRouter} from "react-router-dom";
 import PropTypes from 'prop-types';
-import {createProfile} from '../../actions/profileActions';
+import {createProfile, getCurrentProfile} from '../../actions/profileActions';
 import {Button, Container, Form, Header, Segment, Message, TextArea, Input, Divider} from "semantic-ui-react";
 import classnames from "classnames";
+import isEmpty from '../../validation/is-empty';
 
 class CreateProfile extends Component {
     constructor(props) {
@@ -28,9 +29,61 @@ class CreateProfile extends Component {
         };
     }
 
+    componentDidMount() {
+        this.props.getCurrentProfile();
+    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({errors: nextProps.errors});
+        }
+
+        if (nextProps.profile.profile) {
+            const profile = nextProps.profile.profile;
+
+            // Bring skills array back to CSV
+            const skillsCSV = profile.skills.join(',');
+
+            // If profile field doesnt exist, make empty string
+            profile.company = !isEmpty(profile.company) ? profile.company : '';
+            profile.website = !isEmpty(profile.website) ? profile.website : '';
+            profile.location = !isEmpty(profile.location) ? profile.location : '';
+            profile.githubusername = !isEmpty(profile.githubusername)
+                ? profile.githubusername
+                : '';
+            profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
+            profile.social = !isEmpty(profile.social) ? profile.social : {};
+            profile.twitter = !isEmpty(profile.social.twitter)
+                ? profile.social.twitter
+                : '';
+            profile.facebook = !isEmpty(profile.social.facebook)
+                ? profile.social.facebook
+                : '';
+            profile.linkedin = !isEmpty(profile.social.linkedin)
+                ? profile.social.linkedin
+                : '';
+            profile.youtube = !isEmpty(profile.social.youtube)
+                ? profile.social.youtube
+                : '';
+            profile.instagram = !isEmpty(profile.social.instagram)
+                ? profile.social.instagram
+                : '';
+
+            // Set component fields state
+            this.setState({
+                handle: profile.handle,
+                company: profile.company,
+                website: profile.website,
+                location: profile.location,
+                status: profile.status,
+                skills: skillsCSV,
+                githubusername: profile.githubusername,
+                bio: profile.bio,
+                twitter: profile.twitter,
+                facebook: profile.facebook,
+                linkedin: profile.linkedin,
+                youtube: profile.youtube
+            });
         }
     }
 
@@ -60,7 +113,7 @@ class CreateProfile extends Component {
         this.setState({[e.target.name]: e.target.value});
     };
 
-       handleChange = (e) => this.setState({ status: e.target.value });
+    handleChange = (e) => this.setState({status: e.target.value});
 
     render() {
         const classes = `main-container register-container`;
@@ -131,12 +184,14 @@ class CreateProfile extends Component {
         return (
             <Container className={classes}>
 
-                <Header as='h1' textAlign='center' className="header__custom">Create your profile</Header>
+                <Header as='h1' textAlign='center' className="header__custom">Edit profile</Header>
 
                 <Form inverted onSubmit={this.onSubmit}
-                      className={classnames({'error': errors.handle || errors.website || errors.location || errors.skills
+                      className={classnames({
+                          'error': errors.handle || errors.website || errors.location || errors.skills
                               || errors.githubusername || errors.bio || errors.facebook || errors.twitter || errors.linkedin
-                              || errors.youtube || errors.instagram})}>
+                              || errors.youtube || errors.instagram
+                      })}>
 
                     <Form.Field required className={classnames({'error': errors.handle})}>
                         <label>Profile name</label>
@@ -258,6 +313,8 @@ class CreateProfile extends Component {
 }
 
 CreateProfile.propTypes = {
+    createProfile: PropTypes.func.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -267,6 +324,6 @@ const mapStateToProps = state => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps, {createProfile})(
+export default connect(mapStateToProps, {createProfile, getCurrentProfile})(
     withRouter(CreateProfile)
 );
