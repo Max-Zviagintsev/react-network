@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import connect from "react-redux/es/connect/connect";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import PropTypes from 'prop-types';
 import {createProfile, getCurrentProfile} from '../../actions/profileActions';
 import {Button, Container, Form, Header, Segment, Message, TextArea, Input, Divider} from "semantic-ui-react";
@@ -82,7 +82,8 @@ class CreateProfile extends Component {
                 twitter: profile.twitter,
                 facebook: profile.facebook,
                 linkedin: profile.linkedin,
-                youtube: profile.youtube
+                youtube: profile.youtube,
+                instagram: profile.instagram
             });
         }
     }
@@ -123,6 +124,7 @@ class CreateProfile extends Component {
         if (displaySocialInputs) {
             socialInputs = (
                 <Segment basic className="social__wrapper">
+                    <Button as={Link} to='/dashboard' basic size='medium' color='blue' floated='left'>Back</Button>
                     <Input icon='twitter'
                            iconPosition='left'
                            placeholder='Twitter Profile URL'
