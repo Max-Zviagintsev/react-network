@@ -38,7 +38,7 @@ class Education extends Component {
         ));
         return (
             <Container textAlign='center'>
-                <Header as='h2' textAlign='center' inverted>Education Credentials</Header>
+                <Header as='h2' textAlign='center' inverted>Education</Header>
                 <Segment basic padded='very'>
                     <table className="exp-table">
                         <thead>

@@ -68,7 +68,7 @@ class NavBar extends Component {
                     vertical
                     visible={visible}
                 >
-                    <Menu.Item as={Link} name='user' to='user'>
+                    <Menu.Item as={Link} name='devs' to='/profiles'>
                         User
                     </Menu.Item>
 
@@ -99,8 +99,8 @@ class NavBar extends Component {
                         <Image size="mini" src={logo}/>
                     </Menu.Item>
 
-                    <Menu.Item as={Link} name='user' to='user'>
-                        User
+                    <Menu.Item as={Link} name='devs' to='/profiles'>
+                        React Developers
                     </Menu.Item>
                     {isAuthenticated ? authLinks : guestLinks}
                 </Menu>

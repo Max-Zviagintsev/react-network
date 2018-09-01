@@ -38,7 +38,7 @@ class Experience extends Component {
         ));
         return (
             <Container textAlign='center'>
-                <Header as='h2' textAlign='center' inverted>Experience Credentials</Header>
+                <Header as='h2' textAlign='center' inverted>Experience</Header>
                 <Segment basic padded='very'>
                 <table className="exp-table">
                     <thead>
