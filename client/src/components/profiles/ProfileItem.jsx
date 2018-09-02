@@ -13,24 +13,24 @@ class ProfileItem extends Component {
                 <Image src={profile.user.avatar} alt="avatar" size="small"/>
                 <Card.Content className="profile-content">
 
-                    <Card.Header>{profile.user.name}</Card.Header>
-                    <Card.Meta>
+                    <Card.Header className="profile-content">{profile.user.name}</Card.Header>
+                    <Card.Meta className="profile-content">
                         {profile.status}{' '}
                         {isEmpty(profile.company) ? null : (
                             <span>at {profile.company}</span>
                         )}
                     </Card.Meta>
-                    <Card.Meta>
+                    <Card.Meta className="profile-content">
                         {isEmpty(profile.location) ? null : (
                             <span>{profile.location}</span>
                         )}
                     </Card.Meta>
                     <Divider hidden/>
-                    <Button as={Link} to={`/profile/${profile.handle}`} basic size='medium' color='blue'>View
+                    <Button as={Link} to={`/profile/${profile.handle}`} size='medium' color='blue'>View
                         Profile</Button>
                 </Card.Content>
                 <Card.Content className="profile-content">
-                    <Card.Header>Skill Set</Card.Header>
+                    <Card.Header className="profile-content">Skill Set</Card.Header>
                     <ul className="list-group">
                         {profile.skills.slice(0, 4).map((skill, index) => (
                             <li key={index} className="list-group-item">

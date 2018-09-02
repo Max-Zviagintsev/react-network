@@ -41,6 +41,23 @@ html, body {
     align-self: center !important;
 }
 
+.single-profile-container {
+    margin-top: 70px;
+}
+
+.single-profile-card {
+    background-color: transparent !important;
+    text-align: center !important;
+}
+
+.color-white {
+    color: white !important;
+}
+
+.text-align-center i {
+    padding-left: 7px !important;
+}
+
 .dashboard-container div {
     text-align: center;
 
@@ -119,5 +136,10 @@ table, th, td {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     min-width: 90%;
-    color: black !important;
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.profile-content {
+    color: white !important;
 }
