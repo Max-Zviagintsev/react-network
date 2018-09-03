@@ -50,8 +50,18 @@ html, body {
     text-align: center !important;
 }
 
-.color-white {
+.single-profile-card--left-aligned {
+    background-color: transparent !important;
+}
+
+.color-white,
+.single-profile-card .content .description {
     color: white !important;
+}
+
+.color-orange--centered {
+    color: rgb(255, 133, 27)!important;
+    text-align: center !important;
 }
 
 .text-align-center i {
@@ -69,6 +79,10 @@ html, body {
     flex-direction: column;
     align-self: center;
     padding: 0 20px 100px 20px;
+}
+
+.posts-container {
+    margin-top: 150px;
 }
 
 .register-container form {
@@ -142,4 +156,5 @@ table, th, td {
 
 .profile-content {
     color: white !important;
+    max-width: 450px !important;
 }

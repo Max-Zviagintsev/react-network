@@ -37,6 +37,9 @@ class NavBar extends Component {
                 <Menu.Item>
                     <Image src={user.avatar} alt={user.name} title="You must have a Gravatar connected to your email to display an image" avatar/>
                 </Menu.Item>
+                <Menu.Item as={Link} name='feed' to='feed'>
+                    Post Feed
+                </Menu.Item>
                 <Menu.Item as={Link} name='dashboard' to='dashboard'>
                     Dashboard
                 </Menu.Item>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import isEmpty from '../../validation/is-empty';
-import {Button, Card, Divider, Image} from 'semantic-ui-react';
+import {Button, Card, Divider, Image, List, Icon} from 'semantic-ui-react';
 
 class ProfileItem extends Component {
     render() {
@@ -31,14 +31,13 @@ class ProfileItem extends Component {
                 </Card.Content>
                 <Card.Content className="profile-content">
                     <Card.Header className="profile-content">Skill Set</Card.Header>
-                    <ul className="list-group">
+                    <List inverted>
                         {profile.skills.slice(0, 4).map((skill, index) => (
-                            <li key={index} className="list-group-item">
-                                <i className="fa fa-check pr-1"/>
-                                {skill}
-                            </li>
+                            <List.Item key={index} className="single-profile-skill">
+                                <Icon inverted color='orange' name='check circle outline '/>{skill}
+                            </List.Item>
                         ))}
-                    </ul>
+                    </List>
                 </Card.Content>
             </Card>
         );

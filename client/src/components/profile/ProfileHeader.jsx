@@ -11,7 +11,7 @@ class ProfileHeader extends Component {
                 <Card.Content className="single-profile-card-content">
                     <Image src={profile.user.avatar} size='medium' circular/>
                     <Divider hidden/>
-                    <Card.Header className="color-white">{profile.user.name}</Card.Header>
+                    <Card.Header className="color-orange--centered">{profile.user.name}</Card.Header>
                     <Card.Meta className="color-white">{profile.status}{' '}{isEmpty(profile.company) ? null : (
                         <span>at {profile.company}</span>)}</Card.Meta>
                     {isEmpty(profile.location) ? null : <Card.Description className="color-white">{profile.location}</Card.Description>}
