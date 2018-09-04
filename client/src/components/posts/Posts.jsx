@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import PostForm from './PostForm';
-// import PostFeed from './PostFeed';
+import PostFeed from './PostFeed';
 import {Container, Loader} from 'semantic-ui-react';
 import {getPosts} from '../../actions/postActions';
 
@@ -19,12 +19,12 @@ class Posts extends Component {
         if (posts === null || loading) {
             postContent = <Loader size='big' active inline='centered'/>;
         }
-        // else {
-        //     postContent = <PostFeed posts={posts}/>;
-        // }
+        else {
+            postContent = <PostFeed posts={posts}/>;
+        }
 
         return (
-            <Container text className={classes}>
+            <Container className={classes}>
                 <PostForm/>
                 {postContent}
             </Container>

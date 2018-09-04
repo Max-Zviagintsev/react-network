@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import ProfileItem from './ProfileItem';
 import {getProfiles} from '../../actions/profileActions';
-import {Container, Header, Loader, Segment} from 'semantic-ui-react';
+import {Container, Header, Loader} from 'semantic-ui-react';
 
 class Profiles extends Component {
     componentDidMount() {

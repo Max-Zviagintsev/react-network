@@ -53,7 +53,7 @@ class PostForm extends Component {
                 </Segment>
 
                 <Message error content={errors.text}/>
-                <Button type='submit' fluid size='large' color='orange'>Submit</Button>
+                <Button type='submit' size='large' color='orange'>Submit</Button>
             </Form>
 
         );
