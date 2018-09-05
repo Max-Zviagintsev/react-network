@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    background-color: #0f1e01;
 }
 
 .main-wrapper {
@@ -16,6 +17,10 @@ html, body {
     position: absolute !important;
 }
 
+.navbar__wrapper {
+    z-index: 99!important;
+}
+
 .home-container {
     display: flex !important;
     justify-content: center;
@@ -24,13 +29,6 @@ html, body {
     padding: 0 20px 200px 20px;
 }
 
-.dashboard-container {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    top: 40%;
-
-}
 .profiles-container {
     display: flex !important;
     flex-direction: column;
@@ -70,7 +68,6 @@ html, body {
 
 .dashboard-container div {
     text-align: center;
-
 }
 
 .register-container {
@@ -90,6 +87,18 @@ html, body {
     margin: auto !important;
 }
 
+.footer {
+    flex-shrink: 0;
+    display: none;
+}
+
+.dashboard-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
 @media screen and (min-width: 766px) {
     .main-wrapper {
         min-height: 100vh;
@@ -102,14 +111,15 @@ html, body {
     .register-container {
         margin-top: 100px;
     }
+
+    .footer {
+        flex-shrink: 0;
+        display: flex;
+    }
 }
 
 .ui.sidebar {
     top: 61px !important;
-}
-
-.footer {
-    flex-shrink: 0;
 }
 
 .custom-navbar {

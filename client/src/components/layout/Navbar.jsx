@@ -70,6 +70,7 @@ class NavBar extends Component {
                     inverted
                     vertical
                     visible={visible}
+                    className="sidebar_wrapper"
                 >
                     <Menu.Item as={Link} name='devs' to='/profiles'>
                         User
@@ -115,7 +116,7 @@ class NavBar extends Component {
         );
 
         return (
-            <React.Fragment>
+            <div className="navbar__wrapper">
                 <Responsive {...Responsive.onlyMobile}>
                     <NavBarMobile
                         onPusherClick={this.handlePusher}
@@ -129,7 +130,7 @@ class NavBar extends Component {
                     <NavBarDesktop/>
                     <NavBarChildren>{children}</NavBarChildren>
                 </Responsive>
-            </React.Fragment>
+            </div>
         );
     }
 }

@@ -27,8 +27,7 @@ class Experience extends Component {
                 <td>
                     <Button
                         onClick={this.onDeleteClick}
-                        className="btn btn-danger"
-                        color="blue"
+                        color="red"
                         size="tiny"
                     >
                         Delete
