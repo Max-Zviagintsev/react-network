@@ -38,12 +38,12 @@ class ProfileGithub extends Component {
             <Card.Group key={repo.id} itemsPerRow={2}>
                 <Card className="single-profile-card" fluid>
                     <Card.Content>
-                    <h4>
-                        <Link to={repo.html_url} target="_blank">
-                            {repo.name}
-                        </Link>
-                    </h4>
-                    <Card.Description>{repo.description}</Card.Description>
+                        <h4>
+                            <Link to={repo.html_url} target="_blank">
+                                {repo.name}
+                            </Link>
+                        </h4>
+                        <Card.Description>{repo.description}</Card.Description>
                     </Card.Content>
                 </Card>
                 <Card className="single-profile-card" fluid>

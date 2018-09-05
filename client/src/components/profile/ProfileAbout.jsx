@@ -13,7 +13,7 @@ class ProfileAbout extends Component {
         // Skill List
         const skills = profile.skills.map((skill, index) => (
             <List.Item key={index} className="single-profile-skill">
-                <Icon inverted color='orange' name='check circle outline ' />{skill}
+                <Icon inverted color='orange' name='check' />{skill}
             </List.Item>
         ));
 

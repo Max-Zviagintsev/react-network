@@ -80,7 +80,7 @@ class ProfileCreds extends Component {
                 </Card>
                 <Card className="single-profile-card--left-aligned">
                     <Card.Content className="single-profile-card-content">
-                        <Card.Header cetner className="color-orange--centered">Education</Card.Header>
+                        <Card.Header className="color-orange--centered">Education</Card.Header>
                         <Card.Description className="color-white">
                             {eduItems.length > 0 ? (
                                 <List inverted>{eduItems}</List>

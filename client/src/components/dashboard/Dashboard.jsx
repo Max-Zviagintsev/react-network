@@ -14,7 +14,7 @@ class Dashboard extends Component {
         this.props.getCurrentProfile();
     }
 
-    onDeleteClick(e) {
+    onDeleteClick = (e) => {
         this.props.deleteAccount();
     }
 

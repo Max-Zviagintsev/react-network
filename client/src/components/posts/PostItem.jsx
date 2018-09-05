@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import classnames from 'classnames';
 import {Link} from 'react-router-dom';
 import {deletePost, addLike, removeLike} from '../../actions/postActions';
-import {Card, Feed, Image, Button, Divider, Icon} from 'semantic-ui-react'
+import {Card, Feed, Image, Button, Divider, Icon} from 'semantic-ui-react';
 
 class PostItem extends Component {
     onDeleteClick(id) {

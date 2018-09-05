@@ -34,7 +34,7 @@ class ProfileItem extends Component {
                     <List inverted>
                         {profile.skills.slice(0, 4).map((skill, index) => (
                             <List.Item key={index} className="single-profile-skill">
-                                <Icon inverted color='orange' name='check circle outline '/>{skill}
+                                <Icon inverted color='orange' name='check'/>{skill}
                             </List.Item>
                         ))}
                     </List>

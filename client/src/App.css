@@ -168,3 +168,9 @@ table, th, td {
 .postitem__level {
     margin-bottom: 15px;
 }
+
+.comment-card {
+    background-color: transparent !important;
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+}
