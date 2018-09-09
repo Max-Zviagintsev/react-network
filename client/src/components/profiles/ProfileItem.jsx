@@ -10,7 +10,7 @@ class ProfileItem extends Component {
 
         return (
             <Card className="profile-card">
-                <Image src={profile.user.avatar} alt="avatar" size="small"/>
+                <Image src={profile.user.avatar} alt="avatar" />
                 <Card.Content className="profile-content">
 
                     <Card.Header className="profile-content">{profile.user.name}</Card.Header>

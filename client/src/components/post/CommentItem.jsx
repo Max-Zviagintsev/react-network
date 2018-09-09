@@ -16,7 +16,7 @@ class CommentItem extends Component {
             <Feed.Event>
 
                 <Feed.Label>
-                    <img src={comment.avatar}/>
+                    <img src={comment.avatar} alt="avatar"/>
                 </Feed.Label>
 
                 <Feed.Content>
