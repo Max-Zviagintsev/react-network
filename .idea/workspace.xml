@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52db3315-4668-4979-ad68-3d720a848e1f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/post/CommentItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/post/CommentItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/profiles/ProfileItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/profiles/ProfileItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Home.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +38,7 @@
           <entry key="html" value="2" />
           <entry key="js" value="268" />
           <entry key="json" value="11" />
-          <entry key="jsx" value="121" />
+          <entry key="jsx" value="122" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -53,7 +49,7 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="11" />
-          <entry key="JSX Harmony" value="121" />
+          <entry key="JSX Harmony" value="122" />
           <entry key="JavaScript" value="268" />
         </counts>
       </usages-collector>
@@ -64,7 +60,7 @@
           <entry key="html" value="22" />
           <entry key="js" value="7978" />
           <entry key="json" value="366" />
-          <entry key="jsx" value="10707" />
+          <entry key="jsx" value="10720" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -73,7 +69,7 @@
           <entry key="Git file" value="20" />
           <entry key="HTML" value="22" />
           <entry key="JSON" value="366" />
-          <entry key="JSX Harmony" value="10707" />
+          <entry key="JSX Harmony" value="10720" />
           <entry key="JavaScript" value="7978" />
         </counts>
       </usages-collector>
@@ -81,20 +77,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-974">
-              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/profiles/ProfileItem.jsx">
+        <entry file="file://$PROJECT_DIR$/client/src/components/layout/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+            <state relative-caret-position="346">
+              <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +114,6 @@
         <option value="$PROJECT_DIR$/client/src/validation/is-empty.js" />
         <option value="$PROJECT_DIR$/client/src/components/auth/Login.jsx" />
         <option value="$PROJECT_DIR$/client/src/components/auth/Register.jsx" />
-        <option value="$PROJECT_DIR$/client/src/components/layout/Home.jsx" />
         <option value="$PROJECT_DIR$/client/src/components/common/PrivateRoute.jsx" />
         <option value="$PROJECT_DIR$/validation/profile.js" />
         <option value="$PROJECT_DIR$/models/Profile.js" />
@@ -172,6 +161,7 @@
         <option value="$PROJECT_DIR$/client/src/store.js" />
         <option value="$PROJECT_DIR$/client/src/components/post/CommentItem.jsx" />
         <option value="$PROJECT_DIR$/client/src/components/profiles/ProfileItem.jsx" />
+        <option value="$PROJECT_DIR$/client/src/components/layout/Home.jsx" />
       </list>
     </option>
   </component>
@@ -240,7 +230,7 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-network" type="b2602c69:ProjectViewProjectNode" />
@@ -324,12 +314,12 @@
       <workItem from="1536131414766" duration="11793000" />
       <workItem from="1536154956997" duration="12810000" />
       <workItem from="1536220228392" duration="5027000" />
-      <workItem from="1536480834236" duration="1497000" />
+      <workItem from="1536480834236" duration="2287000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356489000" />
+    <option name="totallyTimeSpent" value="357279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -665,15 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/layout/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/auth/Login.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1150">
@@ -693,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-974">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/post/CommentItem.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -709,8 +683,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/profiles/ProfileItem.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="176">
           <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-974">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/layout/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
